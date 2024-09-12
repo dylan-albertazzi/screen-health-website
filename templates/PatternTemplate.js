@@ -139,7 +139,7 @@ const Metadata = styled.div`
 
 const StyledMain = styled.main`
   padding: var(--space-xl) 0;
-  background: linear-gradient(var(--color-cream) 0, white 110px);
+  background: linear-gradient(var(--color-cream) 0, var(--color-light-cream) 110px);
   grid-column: 1/4 !important;
   width: 100%;
   @media (max-width: 768px) {

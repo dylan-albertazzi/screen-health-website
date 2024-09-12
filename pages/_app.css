@@ -1,63 +1,45 @@
 /* fonts go here */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Eczar:wght@400&family=Barlow:wght@300;400;700&display=swap");
 
 @font-face {
-    font-family: "Canela Deck";
-    src: local("CanelaDeck-Regular"),
-        url("/fonts/CanelaDeck-Regular.woff2") format("woff2"),
-        url("/fonts/CanelaDeck-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Canela Deck";
-    src: local("CanelaDeck-Bold"),
-        url("/fonts/CanelaDeck-Bold.woff2") format("woff2"),
-        url("/fonts/CanelaDeck-Bold.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Canela Deck";
-    src: local("CanelaDeck-Light"),
-        url("/fonts/CanelaDeck-Light.woff2") format("woff2"),
-        url("/fonts/CanelaDeck-Light.woff") format("woff");
+    font-family: "Eczar";
     font-weight: 100;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Canela Text";
-    src: local("CanelaText-Medium"),
-        url("/fonts/CanelaText-Medium.woff2") format("woff2"),
-        url("/fonts/CanelaText-Medium.woff") format("woff");
-    font-weight: 600;
+    font-family: "Eczar";
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Canela Text";
-    src: local("CanelaText-Light"),
-        url("/fonts/CanelaText-Light.woff2") format("woff2"),
-        url("/fonts/CanelaText-Light.woff") format("woff");
+    font-family: "Eczar";
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow";
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Canela Text";
-    src: local("CanelaText-LightItalic"),
-        url("/fonts/CanelaText-LightItalic.woff2") format("woff2"),
-        url("/fonts/CanelaText-LightItalic.woff") format("woff");
+    font-family: "Barlow";
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-weight: 600;
+    font-style: normal;
     font-display: swap;
 }
 

@@ -56,13 +56,17 @@ function GardenPopoverLinks() {
 export default function MainNavLinks() {
   return (
     <Main>
-      <AnimatePresence>
+      <div className="outside-dropdown">
+        <UnderlineHoverLink href="/now">Get Started</UnderlineHoverLink>
+        <UnderlineHoverLink href="/about">By Topic</UnderlineHoverLink>
+      </div>
+      {/* <AnimatePresence>
         <GardenPopoverLinks />
       </AnimatePresence>
       <div className="outside-dropdown">
         <UnderlineHoverLink href="/now">Now</UnderlineHoverLink>
         <UnderlineHoverLink href="/about">About</UnderlineHoverLink>
-      </div>
+      </div> */}
     </Main>
   );
 }

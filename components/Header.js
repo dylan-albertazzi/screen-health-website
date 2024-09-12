@@ -27,12 +27,12 @@ export default function Header({ title, description, keywords, ogImage }) {
             type: "image/png",
           },
         ],
-        site_name: "Maggie Appleton",
+        site_name: "Screen Health",
       }}
-      twitter={{
-        handle: "@mappletons",
-        cardType: "summary_large_image",
-      }}
+      // twitter={{
+      //   handle: "@mappletons",
+      //   cardType: "summary_large_image",
+      // }}
     />
   );
 }

@@ -73,7 +73,7 @@ export default function Index({
 	return (
 		// <NextSeo>
 		<>
-			<Header title="Maggie Appleton" />
+			<Header title="Screen Health" />
 			<Layout>
 				<header
 					style={{
@@ -91,50 +91,20 @@ export default function Index({
 							maxWidth: "1100px",
 						}}
 					>
-						<b>Maggie </b>
-						makes visual essays about programming, design, and anthropology.
+
+						Mission:
+						Help people <b>quiet</b> the constant noise of their phones
 					</Title1>
 					<SmallTitle2
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ delay: 0.5, duration: 1 }}
 					>
-						Designer, anthropologist, and mediocre developer
-						<br />
-						Currently design engineering at{" "}
-						<b style={{ margin: "0 0.6rem 0 0.3rem" }}>
-							<UnderlineHoverLink href="https://normally.com">
-								Normally
-							</UnderlineHoverLink>
-						</b>
+						To make space for a rich interior life with God.
+						
 					</SmallTitle2>
 				</header>
 				<Spacer size="medium" />
-				<motion.section
-					initial={{ opacity: 0, x: -50 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ delay: 0.7, duration: 1 }}
-				>
-					<Link href="/garden">
-						<a>
-							<Title2
-								style={{
-									fontSize: "var(--font-size-2xl)",
-								}}
-							>
-								The Garden
-							</Title2>
-						</a>
-					</Link>
-					<Subheader>
-						A digital garden is a collection of imperfect notes, essays, and
-						ideas growing slowly over time.{" "}
-						<ReadmoreLink href="/garden-history">
-							Learn more
-							<ArrowRightIcon width="18" height="18" />
-						</ReadmoreLink>
-					</Subheader>
-				</motion.section>
 				<GardenSection
 					variants={collectionAnimation}
 					initial="hidden"
@@ -144,13 +114,13 @@ export default function Index({
 						<Link href="/essays">
 							<a>
 								<SectionHeader>
-									Essays
+									Get Started
 									<ArrowRightIcon width="18" height="18" />
 								</SectionHeader>
 							</a>
 						</Link>
 						<Subheader>
-							Opinionated, longform narrative writing with an agenda
+							Calm the noise
 						</Subheader>
 						<div
 							style={{
@@ -177,14 +147,13 @@ export default function Index({
 						<Link href="/notes">
 							<a>
 								<SectionHeader>
-									Notes
+									By Topic
 									<ArrowRightIcon width="18" height="18" />
 								</SectionHeader>
 							</a>
 						</Link>
 						<Subheader>
-							Loose, unopinionated notes on things I don’t entirely understand
-							yet.
+							Jump right to what you're looking for
 						</Subheader>
 						{notes.slice(0, 12).map((note) => (
 							<Link key={note.slug} href={`/${note.slug}`}>
@@ -199,7 +168,7 @@ export default function Index({
 							</Link>
 						))}
 					</section>
-					<section style={{ gridArea: "patterns" }}>
+					{/* <section style={{ gridArea: "patterns" }}>
 						<Link href="/patterns">
 							<a>
 								<SectionHeader>
@@ -222,7 +191,7 @@ export default function Index({
 								/>
 							))}
 						</div>
-					</section>
+					</section> */}
 					<section style={{ gridArea: "library" }}>
 						<Link href="/library">
 							<a>
@@ -233,7 +202,7 @@ export default function Index({
 							</a>
 						</Link>
 						<Subheader>
-							Books I’ve read and books I like the idea of having read.
+							Helpful books
 						</Subheader>
 						<div
 							style={{
@@ -354,7 +323,7 @@ const GardenSection = styled(motion.section)`
 	grid-template-rows: auto;
 	grid-template-areas:
 		"essays essays notes"
-		"patterns library library";
+		"library library library";
 	@media ${breakpoints.mediaMD} {
 		grid-gap: var(--space-s);
 	}

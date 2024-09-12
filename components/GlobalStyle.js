@@ -19,8 +19,8 @@ export const GlobalStyle = createGlobalStyle`
 		--space-160: 10rem; 
 
 		/* Colors */
-		--color-light-cream: #FCFBF7;
-		--color-cream: #F6F5F1;
+		--color-light-cream: #FBF3E1;
+		--color-cream: #F9EED6;
 		--color-tinted-cream: #E6E3E1;
 		--color-black: #353534;
 		--color-gray-800: #4A4A46;
@@ -40,9 +40,9 @@ export const GlobalStyle = createGlobalStyle`
 
 
 		/* Fonts */
-		--font-serif: 'Canela Deck', serif;
-		--font-body: 'Canela Text', serif;
-		--font-sans: 'Lato', sans-serif;
+		--font-serif: 'Eczar', serif;
+		--font-body: 'Eczar', serif;
+		--font-sans: 'Barlow', sans-serif;
 
 
 		/* Leading */

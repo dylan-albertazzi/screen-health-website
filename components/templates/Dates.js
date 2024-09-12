@@ -19,7 +19,7 @@ export default function Dates({ startDate, updated }) {
     return (
       <StyledDates>
         <span>
-          Planted <RelativeDate postDate={updated} />
+          Begun <RelativeDate postDate={updated} />
         </span>
       </StyledDates>
     );
@@ -28,7 +28,7 @@ export default function Dates({ startDate, updated }) {
       <StyledDates>
         {startDate && (
           <span>
-            Planted <RelativeDate postDate={startDate} />
+            Begun <RelativeDate postDate={startDate} />
           </span>
         )}
         {updated && (

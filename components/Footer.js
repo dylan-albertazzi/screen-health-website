@@ -16,48 +16,36 @@ export default function Footer() {
     <StyledFooter>
       <FooterContent>
         <RSSFeed>
-          <h3>Want to stay up to date?</h3>
-          <Link href="/rss.xml">
+          <h3>Want to get in touch?</h3>
+          {/* <Link href="/rss.xml">
             <button>
               <RssIcon width="20" height="20" />
               Subscribe via RSS Feed
             </button>
-          </Link>
+          </Link> */}
           <SocialMediaIcons>
-            <a rel="me" href="https://github.com/MaggieAppleton">
-              <GithubIcon />
-            </a>
-            <a rel="me" href="https://uk.linkedin.com/in/maggieappleton">
-              <LinkedInIcon />
-            </a>
-            <a rel="me" href="https://dribbble.com/mappleton">
-              <DribbbleIcon />
-            </a>
-            <a rel="me" href="https://twitter.com/Mappletons">
+           
+            <a rel="me" href="https://twitter.com/#">
               <TwitterIcon />
-            </a>
-            <a rel="me" href="https://indieweb.social/@maggie">
-              <MastodonIcon />
             </a>
           </SocialMediaIcons>
           <span className="copyright">
-            © {new Date().getFullYear()} Maggie Appleton
+            © {new Date().getFullYear()} Screen Health
           </span>
         </RSSFeed>
         <SitemapList>
           {[
-            { text: "The Garden", slug: "/garden" },
+            // { text: "The Garden", slug: "/garden" },
             // { text: "Start Here", slug: "/start" },
-            { text: "Essays", slug: "/essays" },
+            { text: "Get Started", slug: "/essays" },
             { text: "About", slug: "/about" },
-            { text: "Notes", slug: "/notes" },
-            { text: "Now", slug: "/now" },
-            { text: "Patterns", slug: "/patterns" },
+            { text: "By Topic", slug: "/notes" },
+            // { text: "Patterns", slug: "/patterns" },
             // { text: "Tools I Use", slug: "/uses" },
             { text: "Library", slug: "/library" },
             // { text: "Changelog", slug: "/changelog" },
-            { text: "Projects", slug: "/projects" },
-            { text: "Colophon", slug: "/colophon" },
+            // { text: "Projects", slug: "/projects" },
+            // { text: "Colophon", slug: "/colophon" },
             // { text: "Illustration Resources", slug: "/resources" },
           ].map((link, i) => {
             return (

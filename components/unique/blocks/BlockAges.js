@@ -9,7 +9,7 @@ const BlockAges = (props) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect height="145" width="665" fill="white" />
-      <rect height="8" width="601" fill="#F6F5F1" x="29" y="68" />
+      <rect height="8" width="601" fill="#F9EED6" x="29" y="68" />
       <rect height="8" width="10" fill="#04A5BB" x="29" y="68" />
       <rect height="8" width="10" fill="#04A5BB" x="39" y="68" />
       <rect height="8" width="10" fill="#04A5BB" x="49" y="68" />

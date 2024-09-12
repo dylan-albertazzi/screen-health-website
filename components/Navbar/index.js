@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import Image from "next/image";
 import Link from "next/link";
 import Logo from "../visuals/Logo";
 import MainNavLinks from "./MainNavLinks";
@@ -16,7 +17,7 @@ export default function Navbar() {
       <Link href="/">
         <a aria-label="home" href="/">
           <span className="visually-hidden">Home</span>
-          <Logo />
+            <Image src="/images/logo-black.svg" alt="Screen Health Logo" width={140} height={50} />
         </a>
       </Link>
       <RightHandSide>
@@ -39,3 +40,4 @@ const StyledNavbar = styled(motion.nav)`
   justify-content: space-between;
   padding: var(--space-s) var(--space-m) var(--space-s) 1.3rem;
 `;
+

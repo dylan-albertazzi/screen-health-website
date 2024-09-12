@@ -7,7 +7,7 @@ const Blocktimeline = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect height="356" width="665" fill="white" />
-      <rect height="8" width="644" fill="#F6F5F1" x="12" y="281" />
+      <rect height="8" width="644" fill="#F9EED6" x="12" y="281" />
       <rect height="8" width="31" fill="#04A5BB" x="12" y="281" />
       <rect height="8" width="31" fill="#04A5BB" x="126" y="281" />
       <rect height="8" width="31" fill="#04A5BB" x="473" y="281" />
@@ -28,7 +28,7 @@ const Blocktimeline = () => {
         <text
           style={{ whiteSpace: "pre" }}
           fill="#4A4A46"
-          fontFamily="Canela Text"
+          fontFamily="Barlow"
           fontSize="22"
           xmlSpace="preserve"
         >
@@ -53,7 +53,7 @@ const Blocktimeline = () => {
         <text
           style={{ whiteSpace: "pre" }}
           fill="#4A4A46"
-          fontFamily="Canela Text"
+          fontFamily="Barlow"
           fontSize="22"
           xmlSpace="preserve"
         >
