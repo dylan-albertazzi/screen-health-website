@@ -57,8 +57,8 @@ export default function MainNavLinks() {
   return (
     <Main>
       <div className="outside-dropdown">
-        <UnderlineHoverLink href="/now">Get Started</UnderlineHoverLink>
-        <UnderlineHoverLink href="/about">By Topic</UnderlineHoverLink>
+        <UnderlineHoverLink href="/">Get Started</UnderlineHoverLink>
+        <UnderlineHoverLink href="/garden">By Topic</UnderlineHoverLink>
       </div>
       {/* <AnimatePresence>
         <GardenPopoverLinks />

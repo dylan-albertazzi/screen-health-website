@@ -1,22 +1,29 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import path from "path";
 import { breakpoints } from "../utils/breakpoints";
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
+import { components } from "../utils/components";
 import generateRSSFeed from "../utils/generateRSSFeed";
 // Components
+import { MDXRemote } from "next-mdx-remote";
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, SmallTitle2 } from "../components/Typography";
 import EssayCard from "../components/cards/EssayCard";
+import { getHeadings } from "../utils/getHeadings";
+import { linkify } from "../utils/linkify";
 import ProjectCard from "../components/cards/ProjectCard";
 import BookCard from "../components/cards/BookCard";
 import PatternCard from "../components/cards/PatternCard";
 import { bookData } from "../posts/data/books";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
+import BackToTop from "../components/mdx/BackToTop";
 import Layout from "../components/Layout";
+import ProseWrapper from "../components/mdx/ProseWrapper";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
 import GrowthIcon from "../components/icons/GrowthIcon";
 import {
@@ -32,13 +39,13 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Index({
+	mission,
 	sortedEssays: essays,
 	sortedNotes: notes,
 	sortedProjects: projects,
 	sortedPatterns: patterns,
 }) {
 	// React intersection observer hook. The 'InView' value is true when the element is in view, and false when it's not. We need to assign the ref property to the element we want to monitor.
-
 	const collectionAnimation = {
 		hidden: {
 			opacity: 0,
@@ -91,30 +98,39 @@ export default function Index({
 							maxWidth: "1100px",
 						}}
 					>
-
-						Mission:
-						Help people <b>quiet</b> the constant noise of their phones
+						Mission: 
+						<br/>
+						Help you <b>quiet</b> the constant noise of technology,
 					</Title1>
 					<SmallTitle2
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ delay: 0.5, duration: 1 }}
 					>
-						To make space for a rich interior life with God.
+						to make space for a rich interior life with God.
 						
 					</SmallTitle2>
 				</header>
+				<Spacer size="medium" />
+				<StyledMain>
+					<BackToTop />
+					<ProseWrapper>
+					<MDXRemote {...mission.source} components={components} />
+					</ProseWrapper>
+				</StyledMain>
+
+
 				<Spacer size="medium" />
 				<GardenSection
 					variants={collectionAnimation}
 					initial="hidden"
 					animate="visible"
 				>
-					<section style={{ gridArea: "essays" }}>
+					<section style={{ gridArea: "practice" }}>
 						<Link href="/essays">
 							<a>
 								<SectionHeader>
-									Get Started
+									Practice
 									<ArrowRightIcon width="18" height="18" />
 								</SectionHeader>
 							</a>
@@ -143,11 +159,11 @@ export default function Index({
 							))}
 						</div>
 					</section>
-					<section style={{ gridArea: "notes" }}>
+					{/* <section style={{ gridArea: "notes" }}>
 						<Link href="/notes">
 							<a>
 								<SectionHeader>
-									By Topic
+									Topics
 									<ArrowRightIcon width="18" height="18" />
 								</SectionHeader>
 							</a>
@@ -167,7 +183,7 @@ export default function Index({
 								</a>
 							</Link>
 						))}
-					</section>
+					</section> */}
 					{/* <section style={{ gridArea: "patterns" }}>
 						<Link href="/patterns">
 							<a>
@@ -202,7 +218,7 @@ export default function Index({
 							</a>
 						</Link>
 						<Subheader>
-							Helpful books
+							Searchable collection of books, articles, and notes centered around digital health.
 						</Subheader>
 						<div
 							style={{
@@ -322,7 +338,7 @@ const GardenSection = styled(motion.section)`
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
 	grid-template-areas:
-		"essays essays notes"
+		"practice practice practice"
 		"library library library";
 	@media ${breakpoints.mediaMD} {
 		grid-gap: var(--space-s);
@@ -331,7 +347,7 @@ const GardenSection = styled(motion.section)`
 		grid-template-columns: 1fr;
 		grid-gap: var(--space-l);
 		grid-template-rows: auto;
-		grid-template-areas: "essays" "notes" "patterns" "library";
+		grid-template-areas: "practice" "notes" "patterns" "library";
 	}
 `;
 
@@ -360,6 +376,16 @@ const SectionHeader = styled.h3`
 	}
 `;
 
+const StyledMain = styled.main`
+  margin-top: var(--space-3xs);
+  padding: var(--space-l) 0;
+  grid-column: 1/4 !important;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: var(--space-xl) var(--space-xs);
+  }
+`;
+
 const Subheader = styled.p`
 	font-family: var(--font-sans);
 	font-size: var(--font-size-base);
@@ -370,7 +396,7 @@ const Subheader = styled.p`
 
 // Fetches the data for the page.
 
-export function getStaticProps() {
+export async function getStaticProps() {
 	// Get all essay posts
 	let essays = essayFilePaths.map((filePath) => {
 		const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
@@ -394,6 +420,37 @@ export function getStaticProps() {
 		return new Date(b.data.updated) - new Date(a.data.updated);
 	});
 
+	// Intro Essay
+	const source = fs.readFileSync(path.join(ESSAYS_PATH, `mission.mdx`));
+	const { content, data } = matter(source);
+
+	const toc = data?.toc || null;
+
+	const headings = await getHeadings(content);
+	const contentWithBidirectionalLinks = linkify(content, data.title);
+
+	const mdxSource = await serialize(contentWithBidirectionalLinks, {
+		// Optionally pass remark/rehype plugins
+		mdxOptions: {
+		remarkPlugins: [],
+		rehypePlugins: [
+			require("rehype-slug"),
+			// require("rehype-autolink-headings"),
+		],
+		},
+		scope: data,
+	});
+
+	const mission = {
+		source: mdxSource,
+		frontMatter: data,
+		headings,
+		slug: 'mission',
+		toc,
+		backlinks: null,
+	  }
+
+	console.log("mission: ", mission)
 	// Get all note posts
 	let notes = noteFilePaths.map((filePath) => {
 		const source = fs.readFileSync(path.join(NOTES_PATH, filePath));
@@ -459,6 +516,6 @@ export function getStaticProps() {
 	generateRSSFeed(allPosts);
 
 	return {
-		props: { sortedEssays, sortedNotes, sortedProjects, sortedPatterns },
+		props: { mission, sortedEssays, sortedNotes, sortedProjects, sortedPatterns },
 	};
 }
