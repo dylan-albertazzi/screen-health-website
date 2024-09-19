@@ -4,8 +4,8 @@ import matter from "gray-matter";
 import Layout from "../components/Layout";
 import { Title2 } from "../components/Typography";
 import MasonryGrid from "../components/MasonryGrid";
-import EssayCard from "../components/cards/EssayCard";
-import { essayFilePaths, ESSAYS_PATH } from "../utils/mdxUtils";
+import PracticeCard from "../components/cards/PracticeCard";
+import { practiceFilePaths, PRACTICES_PATH } from "../utils/mdxUtils";
 import Header from "../components/Header";
 import TitleWithCount from "../components/TitleWithCount";
 
@@ -22,7 +22,7 @@ export default function Essays({ essays }) {
         </header>
         <MasonryGrid>
           {essays.map((essay, i) => (
-            <EssayCard
+            <PracticeCard
               key={i}
               id={essay.slug}
               slug={essay.slug}
@@ -42,8 +42,8 @@ export default function Essays({ essays }) {
 
 export function getStaticProps() {
   // Get all essay posts
-  let essays = essayFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+  let essays = practiceFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(PRACTICES_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
 

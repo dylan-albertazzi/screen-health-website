@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
+const PRACTICES_PATH = path.join(process.cwd(), "posts", "essays");
 const NOTES_PATH = path.join(process.cwd(), "posts", "notes");
 const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 
@@ -59,11 +59,11 @@ const getDataForBacklinks = (fileNames, filePath) =>
 
 const getAllPostData = () => {
   // get all note files
-  const essayFiles = fs.readdirSync(ESSAYS_PATH);
+  const essayFiles = fs.readdirSync(PRACTICES_PATH);
   const noteFiles = fs.readdirSync(NOTES_PATH);
   const patternFiles = fs.readdirSync(PATTERNS_PATH);
 
-  const essaysData = getDataForBacklinks(essayFiles, ESSAYS_PATH);
+  const essaysData = getDataForBacklinks(essayFiles, PRACTICES_PATH);
   const notesData = getDataForBacklinks(noteFiles, NOTES_PATH);
   const patternsData = getDataForBacklinks(patternFiles, PATTERNS_PATH);
 

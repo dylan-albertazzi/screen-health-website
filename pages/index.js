@@ -12,7 +12,7 @@ import generateRSSFeed from "../utils/generateRSSFeed";
 import { MDXRemote } from "next-mdx-remote";
 import { Spacer } from "../components/Spacer";
 import { Title1, Title2, SmallTitle2 } from "../components/Typography";
-import EssayCard from "../components/cards/EssayCard";
+import PracticeCard from "../components/cards/PracticeCard";
 import { getHeadings } from "../utils/getHeadings";
 import { linkify } from "../utils/linkify";
 import ProjectCard from "../components/cards/ProjectCard";
@@ -27,8 +27,8 @@ import ProseWrapper from "../components/mdx/ProseWrapper";
 import UnderlineHoverLink from "../components/links/UnderlineHoverLink";
 import GrowthIcon from "../components/icons/GrowthIcon";
 import {
-	essayFilePaths,
-	ESSAYS_PATH,
+	practiceFilePaths,
+	PRACTICES_PATH,
 	noteFilePaths,
 	NOTES_PATH,
 	patternFilePaths,
@@ -146,7 +146,7 @@ export default function Index({
 							}}
 						>
 							{essays.map((essay, i) => (
-								<EssayCard
+								<PracticeCard
 									id={essay.slug}
 									key={essay.slug}
 									variants={itemAnimation}
@@ -398,8 +398,8 @@ const Subheader = styled.p`
 
 export async function getStaticProps() {
 	// Get all essay posts
-	let essays = essayFilePaths.map((filePath) => {
-		const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+	let essays = practiceFilePaths.map((filePath) => {
+		const source = fs.readFileSync(path.join(PRACTICES_PATH, filePath));
 		const { content, data } = matter(source);
 		const slug = filePath.replace(/\.mdx$/, "");
 
@@ -421,7 +421,8 @@ export async function getStaticProps() {
 	});
 
 	// Intro Essay
-	const source = fs.readFileSync(path.join(ESSAYS_PATH, `mission.mdx`));
+	const MISSION_PATH = path.join(process.cwd(), "posts");
+	const source = fs.readFileSync(path.join(MISSION_PATH, `mission.mdx`));
 	const { content, data } = matter(source);
 
 	const toc = data?.toc || null;

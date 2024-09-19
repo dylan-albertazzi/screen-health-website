@@ -21,11 +21,11 @@ const path = require("path");
 //     return arrayOfFiles;
 // };
 
-// ESSAYS_PATH is useful when you want to get the path to a specific file
-const ESSAYS_PATH = path.join(process.cwd(), "posts", "essays");
+// PRACTICES_PATH is useful when you want to get the path to a specific file
+const PRACTICES_PATH = path.join(process.cwd(), "posts", "practices");
 
-const essayFilePaths = fs
-  .readdirSync(ESSAYS_PATH)
+const practiceFilePaths = fs
+  .readdirSync(PRACTICES_PATH)
   // Only include MDX files
   .filter((path) => /\.mdx?$/.test(path));
 
@@ -48,12 +48,12 @@ const projectFilePaths = fs
   .filter((path) => /\.mdx?$/.test(path));
 
 module.exports = {
-  essayFilePaths,
+  practiceFilePaths,
   noteFilePaths,
   projectFilePaths,
   patternFilePaths,
   PATTERNS_PATH,
-  ESSAYS_PATH,
+  PRACTICES_PATH,
   NOTES_PATH,
   PROJECTS_PATH,
 };

@@ -14,9 +14,9 @@ import PatternTemplate from "../templates/PatternTemplate";
 import {
   projectFilePaths,
   noteFilePaths,
-  essayFilePaths,
+  practiceFilePaths,
   patternFilePaths,
-  ESSAYS_PATH,
+  PRACTICES_PATH,
   PATTERNS_PATH,
   NOTES_PATH,
   PROJECTS_PATH,
@@ -97,7 +97,7 @@ export default function PostPage({
 // };
 
 export const getStaticProps = async ({ params }) => {
-  const essays = fs.readdirSync(ESSAYS_PATH);
+  const essays = fs.readdirSync(PRACTICES_PATH);
   const notes = fs.readdirSync(NOTES_PATH);
   const projects = fs.readdirSync(PROJECTS_PATH);
   const patterns = fs.readdirSync(PATTERNS_PATH);
@@ -120,7 +120,7 @@ export const getStaticProps = async ({ params }) => {
   let filePath;
   switch (type) {
     case "essay":
-      filePath = path.join(ESSAYS_PATH, `${params.slug}.mdx`);
+      filePath = path.join(PRACTICES_PATH, `${params.slug}.mdx`);
       break;
     case "note":
       filePath = path.join(NOTES_PATH, `${params.slug}.mdx`);
@@ -190,7 +190,7 @@ export const getStaticPaths = async () => {
       .map((slug) => ({ params: { slug } }));
 
   const notePaths = getSlugParams(noteFilePaths);
-  const essayPaths = getSlugParams(essayFilePaths);
+  const essayPaths = getSlugParams(practiceFilePaths);
   const projectPaths = getSlugParams(projectFilePaths);
   const patternPaths = getSlugParams(patternFilePaths);
 

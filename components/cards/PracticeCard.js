@@ -5,7 +5,7 @@ import GrowthIcon from "../icons/GrowthIcon";
 // import { motion } from "framer-motion";
 import { RelativeDate } from "../templates/Dates";
 
-export default function EssayCard({
+export default function PracticeCard({
   slug,
   cover,
   title,
@@ -17,7 +17,7 @@ export default function EssayCard({
   return (
     <Link key={id} as={`/${slug}`} href={`/${slug}`}>
       <a>
-        <StyledEssayCard variants={variants}>
+        <StyledPracticeCard variants={variants}>
           {cover && (
             <ImageWrapper>
               <Image src={cover} alt={title} width={400} height={400} />
@@ -25,13 +25,13 @@ export default function EssayCard({
           )}
           <h3>{title}</h3>
           <MetadataContainer>
-            {growthStage && <span>{growthStage} Essay</span>}
+            {growthStage && <span>{growthStage} Practice</span>}
             {growthStage && <GrowthIcon size="15" growthStage={growthStage} />}
             <span>
               <RelativeDate postDate={date} />
             </span>
           </MetadataContainer>
-        </StyledEssayCard>
+        </StyledPracticeCard>
       </a>
     </Link>
   );
@@ -63,7 +63,7 @@ const MetadataContainer = styled.div`
   }
 `;
 
-const StyledEssayCard = styled.div`
+const StyledPracticeCard = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-tinted-cream);

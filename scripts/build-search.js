@@ -6,16 +6,16 @@ const algoliasearch = require("algoliasearch");
 const mdxUtils = require("../utils/mdxUtils");
 
 const {
-  essayFilePaths,
-  ESSAYS_PATH,
+  practiceFilePaths,
+  PRACTICES_PATH,
   noteFilePaths,
   NOTES_PATH,
   patternFilePaths,
   PATTERNS_PATH,
 } = mdxUtils;
 
-let essays = essayFilePaths.map((filePath) => {
-  const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+let essays = practiceFilePaths.map((filePath) => {
+  const source = fs.readFileSync(path.join(PRACTICES_PATH, filePath));
   const { content, data } = matter(source);
   const slug = filePath.replace(/\.mdx$/, "");
 

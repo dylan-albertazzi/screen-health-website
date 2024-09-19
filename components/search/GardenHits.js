@@ -1,6 +1,6 @@
 import { connectInfiniteHits } from "react-instantsearch-dom";
 import MasonryGrid from "../MasonryGrid";
-import EssayCard from "../cards/EssayCard";
+import PracticeCard from "../cards/PracticeCard";
 import NoteCard from "../cards/NoteCard";
 import PatternCard from "../cards/PatternCard";
 import styled from "styled-components";
@@ -17,7 +17,7 @@ function GardenHits({ hits, allPostData }) {
       {filteredGardenHits.map((post, i) => {
         if (post.type === "essay") {
           return (
-            <EssayCard
+            <PracticeCard
               key={i}
               id={post.slug}
               slug={post.slug}

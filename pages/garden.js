@@ -5,8 +5,8 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import { Title2 } from "../components/Typography";
 import {
-  essayFilePaths,
-  ESSAYS_PATH,
+  practiceFilePaths,
+  PRACTICES_PATH,
   noteFilePaths,
   NOTES_PATH,
   patternFilePaths,
@@ -37,8 +37,8 @@ export default function Garden({ allPosts }) {
 
 export function getStaticProps() {
   // Get all essay posts
-  let essays = essayFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(ESSAYS_PATH, filePath));
+  let essays = practiceFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(PRACTICES_PATH, filePath));
     const { content, data } = matter(source);
     const slug = filePath.replace(/\.mdx$/, "");
     const {

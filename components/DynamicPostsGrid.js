@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MasonryGrid from "./MasonryGrid";
 import NoteCard from "../components/cards/NoteCard";
-import EssayCard from "../components/cards/EssayCard";
+import PracticeCard from "../components/cards/PracticeCard";
 
 export default function DynamicPostsGrid({ postsToShow }) {
     return (
@@ -10,7 +10,7 @@ export default function DynamicPostsGrid({ postsToShow }) {
                 ({ slug, title, type, growthStage, cover, updated }, i) => {
                     if (type === "essay") {
                         return (
-                            <EssayCard
+                            <PracticeCard
                                 key={i}
                                 slug={slug}
                                 cover={cover}

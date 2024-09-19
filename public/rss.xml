@@ -4,23 +4,30 @@
         <title>Maggie Appleton</title>
         <link>https://maggieappleton.com</link>
         <description>A digital garden filled with visual essays, research notes, and experiments at the intersection of design, development, and anthropology.</description>
-        <lastBuildDate>Thu, 19 Sep 2024 16:50:12 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Sep 2024 17:14:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Our Mission]]></title>
-            <link>https://maggieappleton.com/mission</link>
-            <guid>https://maggieappleton.com/mission</guid>
+            <title><![CDATA[Create A Digital Rule of Life]]></title>
+            <link>https://maggieappleton.com/create-a-drol</link>
+            <guid>https://maggieappleton.com/create-a-drol</guid>
             <pubDate>Thu, 12 Sep 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Help people quiet the constant noise of their phones to make space for a rich interior life with God.]]></content:encoded>
+            <content:encoded><![CDATA[A written game plan for when, where, and how you will use technology.]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Practical Steps]]></title>
-            <link>https://maggieappleton.com/practical-steps</link>
-            <guid>https://maggieappleton.com/practical-steps</guid>
+            <title><![CDATA[Cultivate Your Environment]]></title>
+            <link>https://maggieappleton.com/cultivate-your-environment</link>
+            <guid>https://maggieappleton.com/cultivate-your-environment</guid>
             <pubDate>Thu, 12 Sep 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[Help people quiet the constant noise of their phones to make space for a rich interior life with God.]]></content:encoded>
+            <content:encoded><![CDATA[Technology use should be intentional, not impulsive.]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[iPhone Setup]]></title>
+            <link>https://maggieappleton.com/iphone-setup</link>
+            <guid>https://maggieappleton.com/iphone-setup</guid>
+            <pubDate>Thu, 12 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Make your phone less addictive]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[iPhone Setup]]></title>
@@ -28,6 +35,13 @@
             <guid>https://maggieappleton.com/iphone-setup</guid>
             <pubDate>Thu, 12 Sep 2024 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[Distraction free iPhone setup]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Practical Steps]]></title>
+            <link>https://maggieappleton.com/practical-steps</link>
+            <guid>https://maggieappleton.com/practical-steps</guid>
+            <pubDate>Thu, 12 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[Help people quiet the constant noise of their phones to make space for a rich interior life with God.]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Egghead Courses]]></title>
